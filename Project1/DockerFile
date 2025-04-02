@@ -1,0 +1,14 @@
+WORKDIR /apps
+
+COPY . .
+
+#install dependencies
+
+RUN npm install && npm run test
+
+EXPOSE  8000
+
+#Run The code
+
+CMD ["node", "app.js"]
+
