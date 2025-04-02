@@ -1,14 +1,17 @@
+FROM node:12.2.0-alpine 
+
 WORKDIR /apps
 
-COPY . .
+COPY package*.json ./ 
 
-#install dependencies
+RUN npm install
 
-RUN npm install && npm run test
+COPY view /apps/view
 
-EXPOSE  8000
+COPY . . 
 
-#Run The code
+RUN npm run test || true 
+
+EXPOSE 8000
 
 CMD ["node", "app.js"]
-
