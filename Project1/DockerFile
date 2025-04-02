@@ -1,4 +1,4 @@
-WORKDIR /apps
+``` WORKDIR /apps
 
 COPY . .
 
@@ -10,5 +10,5 @@ EXPOSE  8000
 
 #Run The code
 
-CMD ["node", "app.js"]
+CMD ["node", "app.js"] ```
 
